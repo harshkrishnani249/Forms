@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="forms.css">
+</head>
+
+<body bgcolor=" #00008b">
+  <div class="t1">
+
+
+    <h1 class="a1">Customers Details</h1>
+    <hr>
+    <form class="formstyling" onsubmit="validation()">
+      <div class="b1">
+
+
+        <h2 class="a2">Full Name</h2>
+        <label for="fname">First Name</label><br>
+
+        <input type="text" id="fname" name="fname" size="" height="23">
+        <span id="usererror" class="text-danger font-weight-bold"></span>
+        <br>
+        <br>
+
+
+
+
+        <label for="lname">Last Name</label><br>
+
+
+        <input type="text" id="lname" name="lname">
+        <span id="usererror" class="text-danger font-weight-bold"></span>
+        <br>
+        <br>
+
+
+
+        <h2>Address</h2>
+        <label for="add">Street</label><br>
+
+        <textarea id="add" name="add" rows="1" cols="64" placeholder="House No." width="20px"></textarea><br>
+        <br>
+        <label for="add2">Street Address Line 2</label><br>
+
+        <textarea id="add2" name="add2" rows="1" cols="64" placeholder="Area"></textarea>
+        <br>
+        <br>
+
+        <label for="City">City</label><br>
+
+
+        <input type="text" id="City" name="City"><br>
+        <br>
+
+
+        <label for="state">State/Province</label><br>
+
+
+        <input type="text" id="state" name="state">
+        <br>
+
+
+        <br>
+        <label for="PC">Postal code/Zipcode</label><br>
+
+        <textarea id="PC" name="PC" rows="1" cols="64" placeholder="Pincode"></textarea>
+        <br>
+
+        <h2>Phone Number</h2>
+        <br>
+
+
+
+
+        <label for="phone">Enter a phone number:</label><br><br>
+        <input type="tel" id="phone" name="phone" placeholder="123-45-678">
+        <br>
+        <br>
+
+        <h2>Email</h2>
+
+
+        <br>
+
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" placeholder="123@gmail.com">
+
+
+        <br>
+        <br>
+
+
+
+        <label for="hear">
+          <h2>How Did you hear about Us</h2>
+        </label>
+        <br>
+
+        <select id="title" required>
+          <option value="">Select One</option>
+          <option value="Mr">Newspaper</option>
+          <option value="Mrs">Magzine</option>
+          <option value="Ms">Social media</option>
+        </select>
+        <br>
+
+
+        <br>
+
+
+
+        <label for="feedback">
+          <h2>
+            Feedback About Us
+          </h2>
+        </label><br>
+
+        <textarea id="feedback" name="feedback" rows="7" cols="64" placeholder="Type Here ..."></textarea>
+
+
+        <br>
+        <br>
+        <label for="suggestion">
+          <h2>
+            Suggestion if any for further improvement
+          </h2>
+        </label><br>
+
+        <textarea id="suggestion" name="suggestion" rows="7" cols="64" placeholder="Type Here ..."></textarea>
+
+        <br>
+        <h2>Will you be willing to recommend Us</h2>
+        <input type="checkbox" id="terms">
+        <label for="terms">Yes</label>
+        <br><br>
+        <br>
+        <br>
+        <h2>Please Give Refrence Of Any Two People You Know </h2>
+        <table>
+          <tr>
+            <th class="u1"></th>
+
+            <th class="p3">Full Name</th>
+            <th class="p4">Address</th>
+            <th class="p5">Contact Number</th>
+          </tr>
+          <tr>
+            <td class="p1">1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="p2">2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <br>
+        <div class="s1"> <button type="submit" value="Submit" class="z1">Submit</button></div>
+      </div>
+    </form>
+  </div>
+  <script type="text/javascript">
+    var ok = false;
+
+
+    function validation() {
+
+    }
+    document.getElementById('fname').onchange = () => {
+      var username = document.getElementById('fname').value;
+      var usercheck = /^[A-Za-z]{3,30}$/;
+
+
+      if (usercheck.test(username)) {
+        document.getElementById('usererror').innerHTML = " ";
+
+
+      }
+      else {
+        alert("Enter alphabets");
+        document.getElementById('usererror').innerHTML = " ";
+      }
+      if (fname.value === "") {
+        alert("Please enter your username.");
+        fname.focus();
+        return false;
+      }
+
+    }
+    document.getElementById('lname').onchange = () => {
+      var username = document.getElementById('lname').value;
+      var usercheck = /^[A-Za-z]{3,30}$/;
+
+
+      if (usercheck.test(username)) {
+        document.getElementById('usererror').innerHTML = " ";
+
+      }
+      else {
+        alert("Enter characters");
+        document.getElementById('usererror').innerHTML = " ";
+      }
+
+    }
+    document.getElementById('phone').onchange = () => {
+      var phoneNumber = document.getElementById('phone').value;
+      var phoneRGEX = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+      var phoneResult = phoneRGEX.test(phoneNumber);
+      if (phoneResult == false) {
+        alert('Please enter a valid phone number');
+        // return false;
+      }
+
+
+    }
+    document.getElementById('PC').onchange = () => {
+      var postalCode = document.getElementById('PC').value;
+      var postalRGEX = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
+      var postalResult = postalRGEX.test(postalCode);
+      if (postalResult == false) {
+        alert('Please enter a valid postal number');
+        //return false;
+      }
+
+    }
+    document.getElementById('add').onchange = () => {
+      var addCode = document.getElementById('add').value;
+      var addRGEX = /^[#.0-9a-zA-Z\s,-]+$/;
+      var addResult = addRGEX.test(addCode);
+      if (addResult == false) {
+        alert('Please enter a valid address ');
+        //return false;
+      }
+
+    }
+    document.getElementById('add2').onchange = () => {
+      var add2Code = document.getElementById('add2').value;
+      var add2RGEX = /^[#.0-9a-zA-Z\s,-]+$/;
+      var add2Result = add2RGEX.test(add2Code);
+      if (add2Result == false) {
+        alert('Please enter a valid address ');
+        //return false;
+      }
+
+    }
+    document.getElementById('City').onchange = () => {
+      var CityCode = document.getElementById('City').value;
+      var CityRGEX = /^[a-zA-Z',.\s-]{1,25}$/;
+      var CityResult = CityRGEX.test(CityCode);
+      if (CityResult == false) {
+        alert('Please enter Valid City');
+        //return false;
+      }
+
+    }
+    document.getElementById('state').onchange = () => {
+      var stateCode = document.getElementById('state').value;
+      var stateRGEX = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
+      var stateResult = stateRGEX.test(stateCode);
+      if (stateResult == false) {
+        alert('Please enter a valid State');
+        //return false;
+      }
+
+    }
+    document.getElementById('suggestion').onchange = () => {
+      var suggestionCode = document.getElementById('suggestion').value;
+      var suggestionRGEX = /^[A-Za-z]{3,30}$/;
+      var suggestionResult = suggestionRGEX.test(suggestionCode);
+      if (suggestionResult == false) {
+        alert('Please enter a valid Suggestion');
+        //return false;
+      }
+
+    }
+    document.getElementById('email').onchange = () => {
+      var emailCode = document.getElementById('email').value;
+      var emailRGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var emailResult = emailRGEX.test(emailCode);
+      if (emailResult == false) {
+        alert('Please enter a valid Email id');
+        //return false;
+      }
+
+    }
+    document.getElementById('feedback').onchange = () => {
+      var feedbackCode = document.getElementById('feedback').value;
+      var feedbackRGEX = /^[A-Za-z]{3,30}$/;
+      var feedbackResult = feedbackRGEX.test(feedbackCode);
+      if (feedbackResult == false) {
+        alert('Please enter a valid feedback');
+        //return false;
+      }
+
+    }
+    document.getElementById('feedback').onchange = () => {
+      var feedbackCode = document.getElementById('feedback').value;
+      var feedbackRGEX = /^[A-Za-z]{3,30}$/;
+      var feedbackResult = feedbackRGEX.test(feedbackCode);
+      if (feedbackResult == false) {
+        alert('Please enter a valid feedback');
+        //return false;
+      }
+
+    }
+    const fname = document.getElementById('fname');
+    if (fname.value = "") {
+      alert('Please Enter First name');
+    }
+    const title = document.getElementById('title');
+    if (title.value = "") {
+      alert('Please select a title');
+    }
+    const terms = document.getElementById('terms');
+    if (!terms.checked) {
+      alert('Please agree to the terms and conditions to proceed further.');
+    }
+
+  </script>
+</body>
+
+</html>
